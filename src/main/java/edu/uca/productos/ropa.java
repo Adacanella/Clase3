@@ -1,6 +1,6 @@
-package edu.uca;
+package edu.uca.productos;
 
-public class ropa extends Producto {
+public class ropa extends ProductoBase {
     private String talle;
 
 

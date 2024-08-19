@@ -1,5 +1,6 @@
 package edu.uca;
 
+import edu.uca.productos.ProductoBase;
 import picocli.CommandLine;
 
 import java.util.Scanner;
@@ -42,6 +43,12 @@ public class Main implements Runnable {
     }
 
     private void agregarProducto() {
+        System.out.println("\nelija una opcion:");
+        System.out.println("1. Agregar ropa");
+        System.out.println("2. Agregar electrodomesticos");
+        System.out.println("3. Volver al menu");
+       
+
         System.out.print("\nIngrese el ID del producto: ");
         int id = Integer.parseInt(scanner.nextLine());
 
@@ -51,7 +58,10 @@ public class Main implements Runnable {
         System.out.print("Ingrese el precio del producto: ");
         double price = Double.parseDouble(scanner.nextLine());
 
-        Producto producto = new Producto(id, name, price);
-        tienda.agregarProducto(producto);
+        System.out.print("Ingrese el talle del producto: ");
+        String talle = scanner.nextLine();
+
+        ProductoBase productoBase = new ProductoBase(id, name, price);
+        tienda.agregarProducto(productoBase);
     }
 }
